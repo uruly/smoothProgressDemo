@@ -18,16 +18,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YuD-sQ-o7G">
-                                <rect key="frame" x="112" y="195" width="150" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YuD-sQ-o7G">
+                                <rect key="frame" x="112.5" y="195" width="150" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Bct-jb-AaH"/>
+                                </constraints>
                             </progressView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ANM-fb-SEf">
-                                <rect key="frame" x="112" y="332" width="150" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ANM-fb-SEf">
+                                <rect key="frame" x="112.5" y="334" width="150" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="YNw-zc-VCy"/>
+                                </constraints>
                             </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5h-Me-0YH">
+                                <rect key="frame" x="112.5" y="154" width="40" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="42f-0b-dT6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="animation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2D-74-5WP">
+                                <rect key="frame" x="112.5" y="293" width="75" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="iu0-S0-dH0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hao-kJ-VDx">
+                                <rect key="frame" x="125.5" y="583" width="124" height="30"/>
+                                <state key="normal" title="show ActionSheet"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Phm-7d-rnA">
+                                <rect key="frame" x="112" y="451" width="32" height="30"/>
+                                <state key="normal" title="Stop"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HeC-LN-SA4">
+                                <rect key="frame" x="212" y="451" width="55" height="30"/>
+                                <state key="normal" title="Resume"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ANM-fb-SEf" firstAttribute="top" secondItem="n2D-74-5WP" secondAttribute="bottom" constant="20" id="1FT-r1-FtV"/>
+                            <constraint firstItem="YuD-sQ-o7G" firstAttribute="top" secondItem="p5h-Me-0YH" secondAttribute="bottom" constant="20" id="6Pp-Ny-AuS"/>
+                            <constraint firstItem="hao-kJ-VDx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CYp-cH-hHO"/>
+                            <constraint firstItem="ANM-fb-SEf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FOO-7j-cYG"/>
+                            <constraint firstItem="Phm-7d-rnA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="112" id="I4k-Vo-0Wj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="p5h-Me-0YH" secondAttribute="trailing" symbolic="YES" id="M6x-0d-HfH"/>
+                            <constraint firstItem="ANM-fb-SEf" firstAttribute="leading" secondItem="n2D-74-5WP" secondAttribute="leading" id="Yn1-wr-hhL"/>
+                            <constraint firstItem="HeC-LN-SA4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Phm-7d-rnA" secondAttribute="trailing" symbolic="YES" id="bKa-pH-V6v"/>
+                            <constraint firstItem="YuD-sQ-o7G" firstAttribute="leading" secondItem="p5h-Me-0YH" secondAttribute="leading" id="gHl-NP-SAo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HeC-LN-SA4" secondAttribute="trailing" constant="108" id="hC7-He-rUz"/>
+                            <constraint firstAttribute="bottom" secondItem="HeC-LN-SA4" secondAttribute="bottom" constant="186" id="irg-7u-zY9"/>
+                            <constraint firstItem="ANM-fb-SEf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="1.5" id="irn-VJ-ChC"/>
+                            <constraint firstItem="hao-kJ-VDx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="264.5" id="j18-UT-MJr"/>
+                            <constraint firstItem="YuD-sQ-o7G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jCF-fZ-uWt"/>
+                            <constraint firstItem="HeC-LN-SA4" firstAttribute="baseline" secondItem="Phm-7d-rnA" secondAttribute="baseline" id="lYj-me-sEN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="n2D-74-5WP" secondAttribute="trailing" symbolic="YES" id="thW-rq-WGo"/>
+                            <constraint firstItem="YuD-sQ-o7G" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-137.5" id="zBa-f7-Byd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -37,6 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="40.799999999999997" y="26.53673163418291"/>
         </scene>
     </scenes>
 </document>

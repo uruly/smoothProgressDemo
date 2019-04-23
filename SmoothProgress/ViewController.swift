@@ -10,10 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var timerProgressView: UIProgressView!
-    @IBOutlet weak var animateProgressView: UIProgressView!
-    var timer: Timer?
-    var currentProgress: Float = 0
+    @IBOutlet private weak var timerProgressView: UIProgressView!
+    @IBOutlet private weak var animateProgressView: UIProgressView!
+    private var timer: Timer?
+    private var currentProgress: Float = 0
+    private var duration: CGFloat = 10
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,20 +24,26 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        setupTimer()
+        progressAnimation()
+    }
+
+    private func setupTimer() {
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(changeProgress(_:)), userInfo: nil, repeats: true)
-        UIView.animate(withDuration: 10.0, delay: 0, options: .curveLinear, animations: {
-            self.animateProgressView.setProgress(1, animated: true)
+    }
+
+    private func progressAnimation() {
+        UIView.animate(withDuration: TimeInterval(duration), delay: 0, options: .curveLinear, animations: {
+            self.animateProgressView.setProgress(1, animated: false)
         }) { (_) in
             print("おわり")
         }
     }
 
     @objc func changeProgress(_ timer: Timer) {
-        timerProgressView.setProgress(currentProgress / (10 * 10 - 1), animated: true)
+        timerProgressView.setProgress(currentProgress / Float((duration * 10 - 1)), animated: true)
         currentProgress += 1
-        print("よばれ")
     }
-
 
 }
 
